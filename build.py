@@ -14,7 +14,7 @@ use_plugin("python.distutils")
 # Define project variables
 # default_task = ['clean', 'analyze', 'run_sonar_analysis', 'publish']
 default_task = ['clean', 'analyze', 'publish']
-name = "hello_workd_flask"
+name = "hello_world_flask"
 version = '0.0.1.0'
 
 
