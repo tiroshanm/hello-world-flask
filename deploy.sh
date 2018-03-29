@@ -51,7 +51,7 @@ then
     pyb
 
     echo "[INFO] Create Image tag based on the git commit hash"
-    COMMIT=$(git rev-parse --short HEAD 2> /dev/null | sed "s/\(.*\)/@\1/")
+    COMMIT=$(git rev-parse --short HEAD 2> /dev/null | sed "s/\(.*\)/\1/")
     export VERSION="commit_${COMMIT}"
 
     echo "[INFO] VERSION : ${VERSION}"
