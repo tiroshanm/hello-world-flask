@@ -90,6 +90,8 @@ then
 #        bash docker_image_deploy.sh
 #    fi
 
+    bash dev_helm_deploy.sh
+
 else
     echo "[ERROR] Project build failed"
 fi
