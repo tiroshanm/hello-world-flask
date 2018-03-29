@@ -5,29 +5,30 @@ GOOGLE_DEPLOY='GOOGLE'
 AMAZON_DEPLOY='AMAZON'
 DOCKER_DEPLOY='DOCKER'
 
-IMAGE_NAME='hello-world-flask'
-
 # expected environment varaibles
 #DEPLOY_TYPE - deployment type - GOOGLE, AMAZON, DOCKER
 #REPOSITORY - image repository
 #REGION - required when AMAZON_DEPLOY='AMAZON'
+#IMAGE_NAME - Image name
 
 echo "[ INFO ] Building module starting........"
 
 echo "[ INFO ] Checking expected environment variables"
 
-if [ -z ${DEPLOY_TYPE} ] && [ -z ${REPOSITORY} ]
+if [ -z ${DEPLOY_TYPE} ] && [ -z ${REPOSITORY} ] && [ -z ${IMAGE_NAME} ]
 then
     echo "[ ERROR ] One or more values are empty"
     echo "[ INFO ] DEPLOY_TYPE : ${DEPLOY_TYPE}"
     echo "[ INFO ] REPOSITORY : ${REPOSITORY}"
     echo "[ INFO ] REGION : ${REGION}"
+    echo "[ INFO ] IMAGE_NAME : ${IMAGE_NAME}"
 
     IS_SUCCESS=false
 else
     echo "[ INFO ] DEPLOY_TYPE : ${DEPLOY_TYPE}"
     echo "[ INFO ] REPOSITORY : ${REPOSITORY}"
     echo "[ INFO ] REGION : ${REGION}"
+    echo "[ INFO ] IMAGE_NAME : ${IMAGE_NAME}"
 
     IS_SUCCESS=true
 fi
