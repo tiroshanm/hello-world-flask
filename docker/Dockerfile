@@ -7,7 +7,7 @@ COPY target/dist/hello_workd_flask* /app
 WORKDIR /app
 RUN pip install /app
 
-EXPOSE 5001
+EXPOSE 5000
 ENTRYPOINT ["python"]
 CMD ["/app/api/run.py"]
 
