@@ -51,7 +51,7 @@ then
     pyb
 
     echo "[ INFO ] Create Image tag based on the git commit hash"
-    VERSION=$(git rev-parse --short HEAD 2> /dev/null | sed "s/\(.*\)/@\1/")
+    export VERSION=$(git rev-parse --short HEAD 2> /dev/null | sed "s/\(.*\)/@\1/")
 
     echo "[ INFO ] VERSION : ${VERSION}"
 
@@ -71,7 +71,7 @@ then
 
 # Always Build tool deploy the dev_latest image to the development environment
     echo "[ INFO ] Create Image tag as dev_latest"
-    VERSION='dev_latest'
+    export VERSION='dev_latest'
 
     echo "[ INFO ] VERSION : ${VERSION}"
 
