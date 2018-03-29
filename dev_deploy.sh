@@ -71,24 +71,24 @@ then
     fi
 
 # Always Build tool deploy the dev_latest image to the development environment
-    echo "[INFO] Create Image tag as dev_latest"
-    export VERSION='dev_latest'
-
-    echo "[INFO] VERSION : ${VERSION}"
-
-    echo "[INFO] Creating component image & push"
-    if [ ${DEPLOY_TYPE} = ${GOOGLE_DEPLOY} ]
-    then
-        bash google_image_deploy.sh
-
-    elif [ ${DEPLOY_TYPE} = ${AMAZON_DEPLOY} ]
-    then
-        bash amazon_image_deploy.sh
-
-    elif [ ${DEPLOY_TYPE} = ${DOCKER_DEPLOY} ]
-    then
-        bash docker_image_deploy.sh
-    fi
+#    echo "[INFO] Create Image tag as dev_latest"
+#    export VERSION='dev_latest'
+#
+#    echo "[INFO] VERSION : ${VERSION}"
+#
+#    echo "[INFO] Creating component image & push"
+#    if [ ${DEPLOY_TYPE} = ${GOOGLE_DEPLOY} ]
+#    then
+#        bash google_image_deploy.sh
+#
+#    elif [ ${DEPLOY_TYPE} = ${AMAZON_DEPLOY} ]
+#    then
+#        bash amazon_image_deploy.sh
+#
+#    elif [ ${DEPLOY_TYPE} = ${DOCKER_DEPLOY} ]
+#    then
+#        bash docker_image_deploy.sh
+#    fi
 
 else
     echo "[ERROR] Project build failed"
