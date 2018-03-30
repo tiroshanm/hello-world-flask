@@ -7,8 +7,12 @@ echo "[INFO] Helm Kubernetes Script Updating..."
 echo "[INFO] Clone development helm script repository..."
 
 cd ../
-git pull ${GIT_REPO_WITH_ACCESS_TOKEN} master
+ls
+git init
+git clone ${GIT_REPO_WITH_ACCESS_TOKEN}
+ls
 cd ${GIT_REPO_NAME}
+
 
 sed "s,PLC_REPOSITORY,${REPOSITORY},g;s,PLC_TAG,${VERSION},g;" _hw_values_template.yaml > values.yaml
 
