@@ -3,6 +3,8 @@
 GIT_REPO_WITH_ACCESS_TOKEN="https://Tiroshan:acb9b7a0339923b523395a242aeb7428aaa8a0a5@github.com/Tiroshan/hello-world-helm-development.git"
 GIT_REPO_NAME="hello-world-helm-development"
 
+COMMIT_TIMESTAMP=`date +'%Y-%m-%d %H:%M:%S %Z'`
+
 echo "[INFO] Helm Kubernetes Script Updating..."
 echo "[INFO] Clone development helm script repository..."
 
@@ -15,6 +17,6 @@ cd ${GIT_REPO_NAME}
 
 
 sed "s,PLC_REPOSITORY,${REPOSITORY},g;s,PLC_TAG,${VERSION},g;" _hw_values_template.yaml > values.yaml
-
-git commit -m "Auto update the Helm script based on module:${REPOSITORY} ${VERSION}"
-git push origin master
+git add --all
+git commit -m "Auto update the Helm script based on module:${REPOSITORY} ${VERSION} - ${COMMIT_TIMESTAMP}"
+git push ${GIT_REPO_WITH_ACCESS_TOKEN} master
