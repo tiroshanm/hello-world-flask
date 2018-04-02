@@ -38,7 +38,7 @@ if [ ${IS_SUCCESS} = true ]
 then
     echo "[INFO] Set up environment"
     #export PATH=$PATH:/home/ubuntu/sonar-runner/sonar-runner-2.4/bin
-    export PATH=$PATH:/usr/bin/git
+#    export PATH=$PATH:/usr/bin/git
 
     echo "[INFO] Creating virtual environment"
     python3 -m venv venv

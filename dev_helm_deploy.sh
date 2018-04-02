@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-GIT_REPO_WITH_ACCESS_TOKEN="https://Tiroshan:acb9b7a0339923b523395a242aeb7428aaa8a0a5@github.com/Tiroshan/hello-world-helm-development.git"
+GIT_REPO_WITH_ACCESS_TOKEN="https://Tiroshan:64adac21fb70a9d0570eaaafd34c6839693f096e@github.com/Tiroshan/hello-world-helm-development.git"
 GIT_REPO_NAME="hello-world-helm-development"
 
 COMMIT_TIMESTAMP=`date +'%Y-%m-%d %H:%M:%S %Z'`
+GIT_EMAIL='tiroshanm@gmail.com'
+GIT_USERNAME='Tiroshan'
 
 echo "[INFO] Helm Kubernetes Script Updating..."
 echo "[INFO] Clone development helm script repository..."
@@ -11,6 +13,8 @@ echo "[INFO] Clone development helm script repository..."
 cd ../
 ls
 git init
+git config user.email ${GIT_EMAIL}
+git config user.name ${GIT_USERNAME}
 git clone ${GIT_REPO_WITH_ACCESS_TOKEN}
 ls
 cd ${GIT_REPO_NAME}
