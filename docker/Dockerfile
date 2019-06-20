@@ -15,7 +15,7 @@ RUN pyb
 
 FROM base AS final
 WORKDIR /app
-COPY --from=publish/target/dist/hello_world_flask* /app
+COPY --from=publish target/dist/hello_world_flask* /app
 RUN pip install /app
 
 EXPOSE 5000
