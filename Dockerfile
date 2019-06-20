@@ -10,15 +10,15 @@ EXPOSE 5000
 RUN apt-get update -y
 RUN apt-get install -y python-pip python-dev build-essential
 COPY . /app
-RUN pip install pybuilder
-RUN ls
-RUN pwd
+RUN pip install --pre pybuilder
 RUN pip install -r requirements.txt
 RUN pyb
+RUN ls
+RUN pwd
 
 FROM base AS final
 WORKDIR /app
-COPY --from=publish target/dist/hello_world_flask* /app
+COPY --from=build /app/target/dist/hello_world_flask* /app
 RUN pip install /app
 
 EXPOSE 5000
